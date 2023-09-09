@@ -7,7 +7,7 @@
     "node": ">=14.20.1 <19"
   },
   "scripts": {
-    "build":"tsc",
+    "build": "tsc",
     "compile": "tsc --build",
     "compile:watch": "tsc --build --watch",
     "pre:dev": "cross-env NODE_ENV=development nodemon --experimental-modules --es-module-specifier-resolution=node dist/index.js",
@@ -31,12 +31,12 @@
     "joi": "^17.10.1",
     "mongoose": "^7.5.0",
     "pm2": "^5.3.0",
-    "winston": "^3.10.0"
+    "winston": "^3.10.0",
+    "typescript": "^5.2.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
     "concurrently": "^8.2.1",
-    "nodemon": "^3.0.1",
-    "typescript": "^5.2.2"
+    "nodemon": "^3.0.1"
   }
 }
