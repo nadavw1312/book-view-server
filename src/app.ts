@@ -26,4 +26,8 @@ app.use(ExpressMongoSanitize());
 // v1 api routes
 app.use("/api/v1", routes);
 
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
 export default app;
