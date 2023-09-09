@@ -7,7 +7,7 @@
     "node": ">=14.20.1 <19"
   },
   "scripts": {
-    "compile": "yarn clean && tsc --build",
+    "compile": "tsc --build",
     "compile:watch": "tsc --build --watch",
     "pre:dev": "cross-env NODE_ENV=development nodemon --experimental-modules --es-module-specifier-resolution=node dist/index.js",
     "dev": "concurrently --kill-others \"yarn compile:watch\" \"yarn pre:dev\"",
