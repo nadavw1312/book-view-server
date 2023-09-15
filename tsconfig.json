@@ -14,7 +14,9 @@
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./src",
-    "paths": {}
+    "paths": {
+      "@/*": ["*"]
+    }
   },
   "include": ["src/**/*.ts"]
 }

@@ -4,6 +4,10 @@ import cors from "cors";
 import helmet from "helmet";
 import ExpressMongoSanitize from "express-mongo-sanitize";
 import routes from "./routes/v1";
+import { errorConverter, errorHandler } from "./modules/errors/error";
+
+import httpStatus from "http-status";
+import ApiError from "./modules/errors/ApiError";
 
 const app: Express = express();
 
@@ -29,5 +33,16 @@ app.use("/api/v1", routes);
 app.get("/health", (req, res) => {
   res.status(200).send("OK");
 });
+
+// send back a 404 error for any unknown api request
+app.use((_req, _res, next) => {
+  _res.status(httpStatus.NOT_FOUND).send("Not found");
+});
+
+// convert error to ApiError, if needed
+app.use(errorConverter);
+
+// handle error
+app.use(errorHandler);
 
 export default app;
